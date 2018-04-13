@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+
+                                            //Задание №1
+
+      var question = prompt('Введите число от 0 до 999', 0);
+      function numbers(question){
+        if(!question){
+          alert("Введите цифры от 0 до 999!")
+          return;
+        }
+      var array = question.split("");
+      var number = {};
+      if(array.length == 3){
+        number.Сотни = +array[0];
+        number.Десятки = +array[1];
+        number.Единицы = +array[2];
+        // return number;
+      } else if(array.length == 2){
+        number.Десятки = +array[0];
+        number.Единицы = +array[1];
+        // return number;
+      } else if(array.length == 1){
+        number.Единицы = +array[0];
+        // return number;
+      } else {
+        console.log("Вы ввели число большее чем 999, пожалуйста введите число в заданном диапазоне!");
+        // return number;
+      }
+        for(var i in number){
+        document.write(i +": "+ number[i] + "<br>");
+      }
+      document.write("<hr>" + typeof(number) + "<hr>");
+        console.log(number);
+    }
+  numbers(question);
+
+                                  //Задание №1(Второй вариант)
+
+  function countNumbers(question){
+    if(!question){
+      alert("Введите цифры от 0 до 999!")
+      return;
+    }
+    var array = question.split("");
+
+    numbers = {};
+    while(array.length < 3){
+      array.unshift(0);
+    }
+    if(array.length > 3){
+      console.log("Вы ввели число большее чем 999, пожалуйста введите число в заданном диапазоне!");
+      // return numbers;
+    } else {
+      numbers.Сотни = +array[0];
+      numbers.Десятки = +array[1];
+      numbers.Единицы = +array[2];
+      //return numbers;
+    }
+    for(i in numbers){
+      document.write(i + ": " + numbers[i] + "<br>");
+    }
+      document.write("<hr>" + typeof(numbers) + "<hr>");
+      console.log(numbers);
+  }
+  countNumbers(question);
+
+                                          
+
+
+    </script>
+  </body>
+</html>
